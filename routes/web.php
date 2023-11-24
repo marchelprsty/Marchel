@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/about', 'About@halaman_about');
+Route::get('/create', 'Create@halaman_create');
+Route::get('/update', 'Update@halaman_update');
+Route::get('/delete', 'Delete@halaman_delete');
 
 Auth::routes();
 
