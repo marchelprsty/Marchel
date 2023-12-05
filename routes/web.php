@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Read;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,17 @@ Route::get('/', function () {
 });
 
 Route::get('/create', 'Create@halaman_create');
-Route::get('/read', 'Read@halaman_read');
+Route::post('/read', 'Read@halaman_read');
 Route::get('/update', 'Update@halaman_update');
 Route::get('/delete', 'Delete@halaman_delete');
 
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
