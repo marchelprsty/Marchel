@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<center><h1>SELAMAT DATANG</h1></center>
+    <center><h1>SELAMAT DATANG</h1></center>
     <hr>
     <center><a href="/create"><button>Create</button></a> | <a href="/read"><button>Read</button></a> | <a href="/update"><button>Update</button></a> | <a href="/delete"><button>Delete</button></a></center>
 </body>

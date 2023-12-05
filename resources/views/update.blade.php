@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>SILAHKAN PERBARUI</h1>
+<center><h1>SELAMAT DATANG</h1></center>
     <hr>
-    <a href="/about">HOME</a> | <a href="/create">Create</a> | <a href="/update">Update</a> | <a href="/delete">Delete</a>
+    <center><a href="/create"><button>Create</button></a> | <a href="/read"><button>Read</button></a> | <a href="/update"><button>Update</button></a> | <a href="/delete"><button>Delete</button></a></center>
 </body>
 </html>
