@@ -7,7 +7,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Digital Guestbook</title>
+
+    <style>
+        body {
+            background-image: url('/image/bgimage.jpg'); /* Sesuaikan dengan path dan nama gambar Anda */
+            background-size: cover; /* Untuk memastikan gambar mencakup seluruh background */
+            backdrop-filter: blur(5px);
+        }
+    </style>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -18,24 +26,24 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/app.css') }}">
 </head>
-<body>
+<body>  
     <div class="container">
         <div class="card">
-            <div class="card-body vh-100">
+            <div class="card-body">
                 <div class="">
-                <h1 class="text-center font-weight-bolder ">selamatdatang</h1>
+                <h1 class="text-center font-weight-bold">My Digital Guestbook</h1>
                 </div>
                 <hr>
                 <a href="/create"><button class="btn btn-primary">Create</button></a> 
-                <a href="/read"><button class="btn btn-success">Read</button></a> 
+                <a href="/read"><button class="btn btn-primary">Read</button></a> 
                 <hr>
-                <form action="#" method="get" class="form-inline mb-3">
-                    <input class="form-control-sm inline" type="text" name="cari" placeholder="Cari....">
-					<input class="btn btn-primary ml-3" type="submit" value="CARI">
-                </form>
         @yield('content')
             </div>
         </div>
+        <footer>
+            <p class="text-center">&copy; <a href=#>MarchelPrasetyo</a>. 2024</p>
+        </footer>
     </div>
+
 </body>
 </html>

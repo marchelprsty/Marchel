@@ -18,10 +18,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+
+
+
 Route::get('/create', 'Create@halaman_create');
-Route::post('/read', 'Read@halaman_read');
+Route::get('/read', 'Read@halaman_read');
 Route::get('/update', 'Update@halaman_update');
 Route::get('/delete', 'Delete@halaman_delete');
+Route::get('/read/cari','Read@cari');
 
 
 
