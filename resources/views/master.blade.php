@@ -34,7 +34,7 @@
                 <h1 class="text-center font-weight-bold">My Digital Guestbook</h1>
                 </div>
                 <hr>
-                <a href="/create"><button class="btn btn-primary">Create</button></a> 
+                <a href="/"><button class="btn btn-primary">Create</button></a> 
                 <a href="/read"><button class="btn btn-primary">Read</button></a> 
                 <hr>
         @yield('content')

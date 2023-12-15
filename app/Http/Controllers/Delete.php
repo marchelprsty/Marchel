@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class Delete extends Controller
 {
-    public function halaman_delete(){
+    public function delete(){
         return view('delete');
     }
 }
