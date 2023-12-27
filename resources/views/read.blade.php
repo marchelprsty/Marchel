@@ -2,8 +2,9 @@
 @section('content')
 <h2 class="text-center">Haloo..</h2>
 <p class="text-center">Ini daftar tamu kita ❤️❤️</p>
-<form action="/read/cari" method="GET" class="form-inline mb-3">
-    <input class="form-control-md inline" type="text" name="cari" placeholder="Cari....">
+
+<form method="GET" action="{{ route('search') }}">
+    <input type="text" class="form-control-md inline" name="cari" placeholder="Search...">
     <input class="btn btn-primary ml-3" type="submit" value="cari">
 </form>
 

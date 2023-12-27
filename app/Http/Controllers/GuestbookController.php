@@ -73,4 +73,16 @@ class GuestbookController extends Controller
         return redirect()->route('read')
             ->with('success', 'data deleted successfully');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $guestbooks = Guestbook::where('nama', 'like', "%$search%")
+            ->orWhere('email', 'like', "%$search%")
+            ->orWhere('alamat', 'like', "%$search%")
+            ->orWhere('no_telepon', 'like', "%$search%")
+            ->simplepaginate(10);
+
+        return view('read', compact('guestbooks'));
+    }
 }

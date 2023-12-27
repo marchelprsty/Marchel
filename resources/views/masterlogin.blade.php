@@ -33,15 +33,8 @@
                 <div class="">
                 <h1 class="text-center font-weight-bold">My Digital Guestbook</h1>
                 </div>
-                <hr>
-                <a href="/home"><button class="btn btn-primary">Create</button></a> 
-                <a href="/read"><button class="btn btn-primary">Read</button></a> 
-                <hr>
+                
         @yield('content')
-        <form action="{{ url('logout') }}" method="POST">
-            @csrf
-            <button type="submit"> Logout </button>
-        </form>
             </div>
         </div>
         <footer>

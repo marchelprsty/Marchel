@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Read;
 use App\Http\Controllers\MahasiswaController;
@@ -7,6 +9,10 @@ use App\Http\Controllers\Create;
 use App\Http\Controllers\Update;
 use App\Http\Controllers\Delete;
 use App\Http\Controllers\GuestbookController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\LogoutController;
+use App\Http\Middleware\Authenticate;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,22 +24,27 @@ use App\Http\Controllers\GuestbookController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/register','auth\RegisterController@validator')->middleware(AdminMiddleware::class);
 Route::get('/read', [GuestbookController::class, 'read'])->name('read');
-Route::get('/', [GuestbookController::class, 'create']);
+Route::get('/home', [GuestbookController::class, 'create']);
 Route::post('/store', [GuestbookController::class, 'store']);
 Route::get('/edit/{id}', [GuestbookController::class, 'edit']);
 Route::put('/update/{id}', [GuestbookController::class, 'update']);
 Route::get('/destroy/{id}', [GuestbookController::class, 'destroy']);
+Route::get('/search', [GuestbookController::class, 'search'])->name('search');
 
+Route::post('/logout', [LogoutController::class, 'logout'])->name('auth.logout');
+Route::get('/register', [RegisterController::class, 'register'])->name('auth.register');
+Route::post('/register', [RegisterController::class, 'store'])->name('auth.store');
+
+// Route::middleware(['admin'])->group(function () {
+//     // Rute-rute yang hanya dapat diakses oleh admin
+//     Route::get('/admin/dashboard', 'AdminController@dashboard');
+//     // ... tambahkan rute admin lainnya di sini ...
+// });
 
 
 

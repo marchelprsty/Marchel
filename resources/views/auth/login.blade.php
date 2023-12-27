@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('masterlogin')
 
 @section('content')
 <div class="container">
@@ -54,8 +54,12 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('sign in') }}
                                 </button>
+                                |
+                                {{-- <div class="mt-3">
+                                    Belum punya akun? <a href="{{ route('register') }}">Daftar disini</a>.
+                                </div> --}}
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
