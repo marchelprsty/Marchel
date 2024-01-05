@@ -5,6 +5,7 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
 
+
                 <h2 class="text-center">Haloo..</h2>
                 <p class="text-center">Tolong Masukan data diri anda</p>
 

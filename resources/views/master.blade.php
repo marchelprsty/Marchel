@@ -40,7 +40,7 @@
         @yield('content')
         <form action="{{ url('logout') }}" method="POST">
             @csrf
-            <button type="submit"> Logout </button>
+            <button type="submit" class="btn btn-close"></button>
         </form>
             </div>
         </div>

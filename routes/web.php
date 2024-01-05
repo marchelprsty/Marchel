@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Read;
 use App\Http\Controllers\MahasiswaController;
@@ -36,10 +37,21 @@ Route::put('/update/{id}', [GuestbookController::class, 'update']);
 Route::get('/destroy/{id}', [GuestbookController::class, 'destroy']);
 Route::get('/search', [GuestbookController::class, 'search'])->name('search');
 
-Route::post('/logout', [LogoutController::class, 'logout'])->name('auth.logout');
-Route::get('/register', [RegisterController::class, 'register'])->name('auth.register');
-Route::post('/register', [RegisterController::class, 'store'])->name('auth.store');
+// Route::post('/logout', [LogoutController::class, 'logout'])->name('auth.logout');
+// Route::get('/register', [RegisterController::class, 'register'])->name('auth.register');
+// Route::post('/register', [RegisterController::class, 'store'])->name('auth.store');
 
+Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/', [AuthController::class, 'login']);
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('login', [AuthController::class, 'login']);
+Route::middleware(['auth'])->group(function () {
+    // Rute-rute yang memerlukan autentikasi
+    Route::get('/create', [AuthController::class, 'showCreateForm'])->name('create');
+});
 // Route::middleware(['admin'])->group(function () {
 //     // Rute-rute yang hanya dapat diakses oleh admin
 //     Route::get('/admin/dashboard', 'AdminController@dashboard');
